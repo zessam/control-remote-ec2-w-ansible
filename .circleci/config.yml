@@ -112,7 +112,7 @@ jobs:
 
 
 
-      
+
   # Exercise: Promote to Production - Job 1 
   # Prerequisite: 
   # 1. An S3 bucket (say `mybucket644752792305`) with a sample index.html created manually in your AWS console. 
@@ -224,6 +224,7 @@ workflows:
           requires:
             - get_last_deployment_id
             - promote_to_production
+      - destoy_environment
 
 
 
