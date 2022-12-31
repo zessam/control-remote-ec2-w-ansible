@@ -26,7 +26,7 @@ commands:
           # ${CIRCLE_WORKFLOW_ID:0:5} takes the first 5 chars of the variable CIRCLE_CI_WORKFLOW_ID 
           when: on_fail
           command: |
-            aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5}
+            aws cloudformation delete-stack --stack-name zezoStack-${CIRCLE_WORKFLOW_ID:0:5}
           
 jobs:
   # Exercise: Creating a Simple Workflow
@@ -107,16 +107,12 @@ jobs:
       - run:
           name: smoke test
           command: |
-            URL="https://blog.udacity.com/"
-            # Test if website exists
-            if curl -s --head ${URL} 
-            then
-              return 1
-            else
-              return 1
-            fi
-      - destroy_environment      
-  
+            return 1
+      - destroy_environment
+
+
+
+      
   # Exercise: Promote to Production - Job 1 
   # Prerequisite: 
   # 1. An S3 bucket (say `mybucket644752792305`) with a sample index.html created manually in your AWS console. 
