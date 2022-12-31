@@ -219,6 +219,7 @@ workflows:
       - create_infrastructure
       - configure_infrastructure
       - create_and_deploy_front_end
+      - smoke_test
       - promote_to_production:
           requires: 
             - create_and_deploy_front_end
@@ -227,3 +228,6 @@ workflows:
           requires:
             - get_last_deployment_id
             - promote_to_production
+
+
+
