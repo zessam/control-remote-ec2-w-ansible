@@ -107,9 +107,9 @@ jobs:
       - run:
           name: smoke test
           command: |
-            return 1
+            return 0
       - destroy_environment
-      when: on_fail
+    
 
 
   # Exercise: Promote to Production - Job 1 
